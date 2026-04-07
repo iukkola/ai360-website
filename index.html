@@ -1,106 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI360 - Applied AI for Sport and Climate</title>
-    <meta name="description" content="AI360 develops applied AI tools that help people understand complex systems. Sport, football, and carbon measurement.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI360.live</title>
+  <meta name="description" content="Sam is an AI-based approach to interpreting football through structured events and context.">
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --text: #1f1f1c;
+      --muted: #5f5f58;
+      --line: #d9d8d2;
+      --accent: #1f4f46;
+      --accent-soft: #e8f0ee;
+      --max: 920px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 72px;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    nav a {
+      margin-left: 18px;
+      font-size: 0.98rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 88px 0 72px;
+    }
+
+    .hero-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      max-width: 760px;
+      font-size: 1.16rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    main section {
+      padding: 28px 0;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 34px 32px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 0 0 10px;
+    }
+
+    .quote {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent);
+      background: #fafaf8;
+      border-radius: 12px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    footer {
+      padding: 56px 0 70px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .footer-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px 32px;
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-box,
+      .section-card,
+      .footer-card {
+        padding: 28px 22px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">AI360</div>
-            <ul>
-                <li><a href="#what-we-do">What We Do</a></li>
-                <li><a href="#sport">Sport</a></li>
-                <li><a href="#carbon">Carbon</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">AI360 / Sam</div>
+      <nav>
+        <a href="#about">What is Sam?</a>
+        <a href="#approach">Approach</a>
+        <a href="#application">Application</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section class="hero">
-            <h1>From match intelligence to climate measurement</h1>
-            <p>AI360 develops applied AI tools that help people understand complex systems.</p>
-            <p class="hero-sub">Our primary focus is sport, with football at the core, and a secondary focus on carbon removal and measurement.</p>
-        </section>
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-box">
+        <div class="eyebrow">Football intelligence through structure and context</div>
+        <h1>Understanding football beyond the goals.</h1>
+        <p class="lead">
+          Sam is an AI-based approach to interpreting football through structured events and context.
+        </p>
+      </div>
+    </section>
 
-        <section id="what-we-do" class="what-we-do">
-            <h2>What We Do</h2>
-            <p class="intro">At AI360, we build practical, domain-focused AI concepts designed for real-world use.</p>
-            <div class="principles-grid">
-                <div class="principle-card">
-                    <h3>Structured Data</h3>
-                    <p>We emphasise structured data and context as the foundation for meaningful AI applications.</p>
-                </div>
-                <div class="principle-card">
-                    <h3>Explainability</h3>
-                    <p>We prioritise explainability over raw prediction, making AI outputs understandable.</p>
-                </div>
-                <div class="principle-card">
-                    <h3>Real Usage</h3>
-                    <p>We build tools that evolve through real usage and feedback.</p>
-                </div>
-            </div>
-        </section>
+    <section id="about">
+      <div class="section-card">
+        <h2>What is Sam?</h2>
+        <p>
+          Sam is a concept built around a simple idea: football should be understood as a continuous flow,
+          not just a collection of highlights.
+        </p>
+        <p>
+          Instead of focusing only on goals and key moments, Sam looks at how situations develop:
+          how attacks build, how pressure evolves, and how decisions shape the game.
+        </p>
+        <p>
+          The aim is not only to describe what happens, but to make the game more understandable.
+        </p>
+        <div class="quote">
+          Football becomes more meaningful when the moments between the highlights are also understood.
+        </div>
+      </div>
+    </section>
 
-        <section id="sport" class="sport">
-            <h2>Primary Focus: Sport & AI</h2>
-            <h3 class="section-subtitle">Understanding sport beyond scores</h3>
-            <p>Sport is the core domain of AI360. We develop AI-assisted concepts that support:</p>
-            <ul class="feature-list">
-                <li>Match understanding and tactical explanation</li>
-                <li>Real-time and post-event commentary assistance</li>
-                <li>Educational and interactive sport experiences</li>
-            </ul>
-            <p class="sport-note"><strong>Football is our primary sport.</strong> The same principles apply to other structured team sports, and in later phases may extend to areas such as American football, rugby, and baseball.</p>
-        </section>
+    <section id="approach">
+      <div class="section-card">
+        <h2>Approach</h2>
+        <p>
+          Sam is based on structured event data combined with contextual interpretation.
+        </p>
+        <p>
+          The focus is on:
+        </p>
+        <ul>
+          <li>clarity over complexity</li>
+          <li>explainability over prediction</li>
+          <li>practical use over theoretical models</li>
+        </ul>
+        <p style="margin-top:16px;">
+          Development is iterative and grounded in real match material.
+        </p>
+      </div>
+    </section>
 
-        <section id="carbon" class="carbon">
-            <h2>Secondary Focus: Carbon Removal & Measurement</h2>
-            <p>Alongside sport, AI360 explores how applied AI can support carbon removal and carbon credit measurement, particularly in agriculture.</p>
-            <ul class="feature-list">
-                <li>Practical data collection workflows</li>
-                <li>Evidence-based monitoring over time</li>
-                <li>Improving transparency and trust in measurement processes</li>
-            </ul>
-            <p class="carbon-note">This is a secondary research and pilot track.</p>
-        </section>
+    <section id="application">
+      <div class="section-card">
+        <h2>Application</h2>
+        <p>
+          The work explores how this approach can support:
+        </p>
+        <ul>
+          <li>match interpretation</li>
+          <li>commentary assistance</li>
+          <li>educational use in football</li>
+        </ul>
+        <p style="margin-top:16px;">
+          The primary focus is football, with potential to extend to other team sports later.
+        </p>
+      </div>
+    </section>
+  </main>
 
-        <section id="approach" class="approach">
-            <h2>Our Approach</h2>
-            <p>Across all projects, AI360 follows the same principles:</p>
-            <div class="approach-grid">
-                <div class="approach-item">
-                    <span class="approach-number">1</span>
-                    <p>Start small and test in real conditions</p>
-                </div>
-                <div class="approach-item">
-                    <span class="approach-number">2</span>
-                    <p>Prioritise clarity, trust, and usability</p>
-                </div>
-                <div class="approach-item">
-                    <span class="approach-number">3</span>
-                    <p>Iterate based on real-world feedback</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>Contact</h2>
-            <p class="contact-company">AI360</p>
-            <p class="contact-person">Contact person: Ilkka Ukkola</p>
-            <a href="mailto:ilkka@ai360.live" class="cta-button">ilkka@ai360.live</a>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 AI360. All rights reserved.</p>
-    </footer>
+  <footer id="contact">
+    <div class="wrap">
+      <div class="footer-card">
+        <h2>Contact</h2>
+        <p>AI360<br>Ilkka Ukkola</p>
+        <p><a href="mailto:ilkka@ai360.live">ilkka@ai360.live</a></p>
+        <p class="small">© 2026 AI360.live. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
